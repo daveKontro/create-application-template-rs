@@ -1,0 +1,15 @@
+notes.md
+.vscode
+_archive
+sitemap.xml
+audit-report.json
+
+build
+node_modules
+coverage
+
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

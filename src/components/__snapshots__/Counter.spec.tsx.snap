@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`styled with palette colors 1`] = `
+.c0 {
+  height: 40px;
+  padding: 10px;
+  font-size: 18px;
+  color: #cec2eb;
+  background-color: #454145;
+  border: 1px solid #cec2eb;
+  border-radius: 8px;
+  transition-duration: 0.5s;
+}
+
+.c0:hover {
+  border-radius: 20px;
+}
+
+<button
+  class="c0"
+>
+  count: 
+  0
+</button>
+`;
