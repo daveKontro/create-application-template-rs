@@ -1,10 +1,10 @@
 import { createGlobalStyle } from 'styled-components'
-import Exo2 from '../fonts/Exo2-Regular.woff2'
+import Orbitron from '../fonts/Orbitron-Regular.woff2'
 
 const GlobalStyles = createGlobalStyle`
   @font-face {
     font-family: '${({ theme }) => theme.font}';
-    src: url('${Exo2}') format('woff2');
+    src: url('${Orbitron}') format('woff2');
   }
 
   body {

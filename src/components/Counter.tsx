@@ -1,5 +1,5 @@
 import { FC, useState } from 'react'
-import { StyledCounter } from '../styles/Counter.styled'
+import * as styledCount from '../styles/Counter.styled'
 
 // NOTE update count then edit App.tsx... thanks
 // to ReactRefreshWebpackPlugin state is preserved
@@ -13,9 +13,14 @@ export const Counter: FC = () => {
 
   return (
     <div>
-      <StyledCounter onClick={handleClickCounter}>
-        count:&nbsp;{count}
-      </StyledCounter>
+      <styledCount.StyledCounter onClick={handleClickCounter}>
+        <>count:&nbsp;</>
+        <styledCount.StyledCount
+          data-testid='count'
+        >
+          {count}
+        </styledCount.StyledCount>
+      </styledCount.StyledCounter>
     </div>
   )
 }

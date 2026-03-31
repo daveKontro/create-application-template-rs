@@ -20,7 +20,6 @@
       "@types/react",
       "@types/react-dom",
       "@types/jest",
-      "@types/webpack-env",
       "@types/styled-components",
       "jest-extended",
       "@testing-library/jest-dom"

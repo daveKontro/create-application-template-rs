@@ -11,7 +11,7 @@ test('count increases per click', async () => {
       <Counter />
     </ThemeProvider>
   )
-  const button = await screen.findByRole('button', { name: /count/i })
+  const button = screen.getByTestId('count')
 
   const user = userEvent.setup()
   await user.click(button)

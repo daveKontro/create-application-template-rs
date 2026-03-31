@@ -7,7 +7,7 @@ jest.useFakeTimers()
 test('renders title', () => {
   render(<App />)
 
-  const text = 'Create Application Template'
+  const text = 'Create Application Template RS'
 
   for (let i = 1; i <= text.length; i++) {
     act(() => {

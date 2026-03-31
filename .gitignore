@@ -4,6 +4,7 @@ _archive
 sitemap.xml
 audit-report.json
 
+.swc
 build
 node_modules
 coverage

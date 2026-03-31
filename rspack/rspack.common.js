@@ -1,9 +1,8 @@
 const fs = require('fs')
+const { rspack } = require('@rspack/core')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const Dotenv = require('dotenv-webpack')
-const { WebpackManifestPlugin } = require('webpack-manifest-plugin')
-const CopyPlugin = require('copy-webpack-plugin')
+const { RspackManifestPlugin } = require('rspack-manifest-plugin')
 const env = require('./utilities/env')
 const getPaths = require('./utilities/getPaths')
 const createEnvironmentHash = require('./utilities/createEnvironmentHash')
@@ -13,8 +12,8 @@ const generateAssetManifest = require('./utilities/generateAssetManifest')
 const reCss = /\.css$/
 const reCssModule = /\.module\.css$/
 
-module.exports = (webpackEnv) => {
-  const { BUNDLER_ENV } = webpackEnv
+module.exports = (rspackEnv) => {
+  const { BUNDLER_ENV } = rspackEnv
   const { INLINE_SIZE_LIMIT } = process.env
 
   const paths = getPaths({ BUNDLER_ENV })
@@ -27,7 +26,7 @@ module.exports = (webpackEnv) => {
   const styleLoaders = [
     ...(isProduction
       ? [{
-        loader: MiniCssExtractPlugin.loader,
+        loader: rspack.CssExtractRspackPlugin.loader,  // MiniCssExtractPlugin.loader,
         options: {
           // css is located in 'static/css', use publicPath
           // to locate index.html directory relative to css
@@ -41,8 +40,9 @@ module.exports = (webpackEnv) => {
   return {
     entry: paths.src.indexTsx,
     resolve: {
-      // can now leave off extentions when importing
+      // can now leave off extensions when importing
       extensions: ['.tsx', '.jsx', '.ts', '.js'],
+      tsConfig: paths.tsconfigJson,
     },
     watchOptions: {
       ignored: ['**/node_modules'],
@@ -50,17 +50,68 @@ module.exports = (webpackEnv) => {
     module: {
       rules: [
         {
-          test: /\.(ts|js)x?$/,
-          exclude: /node_modules/,
+          test: /\.(j|t)s$/,
+          exclude: [/[\\/]node_modules[\\/]/],
+          loader: 'builtin:swc-loader',
+          options: {
+            jsc: {
+              parser: {
+                syntax: 'typescript',
+              },
+              externalHelpers: true,
+              transform: {
+                react: {
+                  runtime: 'automatic',
+                  development: isDevelopment,
+                  refresh: isDevelopment,
+                },
+              },
+            },
+            env: {
+              targets: 'Chrome >= 48',  // browser compatibility
+            },
+          },
+        },
+        {
+          test: /\.(j|t)sx$/,
+          exclude: [/[\\/]node_modules[\\/]/],
           use: [
+            {
+              loader: 'builtin:swc-loader',
+              options: {
+                jsc: {
+                  parser: {
+                    syntax: 'typescript',
+                    tsx: true,
+                  },
+                  transform: {
+                    react: {
+                      runtime: 'automatic',
+                      development: isDevelopment,
+                      refresh: isDevelopment,
+                    },
+                  },
+                  externalHelpers: true,
+                  experimental: {
+                    plugins: [
+                      ['@swc/plugin-styled-components', {
+                        displayName: true,
+                        ssr: true,
+                        fileName: true,
+                      }],
+                    ],
+                  },
+                },
+                env: {
+                  targets: 'Chrome >= 48',
+                },
+              },
+            },
+            // NOTE see docs for usage of React Compiler via babel
+            // https://rspack.rs/guide/tech/react#react-compiler
             {
               loader: 'babel-loader',
               options: {
-                plugins: [
-                  // for use with ReactRefreshWebpackPlugin
-                  isDevelopment
-                    && require.resolve('react-refresh/babel'),
-                ].filter(Boolean),
                 cacheDirectory: true,
                 cacheCompression: false,
                 compact: isProduction,
@@ -128,7 +179,7 @@ module.exports = (webpackEnv) => {
       new HtmlWebpackPlugin({
         template: paths.src.indexHtml,
         favicon: paths.src.assets.faviconIco,
-        title: 'Create Application Template',
+        title: 'Create Application Template RS',
         ...(isProduction && {
           minify: {
             removeComments: true,
@@ -144,12 +195,12 @@ module.exports = (webpackEnv) => {
           },
         }),
       }),
-      new WebpackManifestPlugin({
+      new RspackManifestPlugin({
         fileName: 'asset-manifest.json',
         publicPath: '/',
         generate: generateAssetManifest,
       }),
-      new CopyPlugin({
+      new rspack.CopyRspackPlugin({
         patterns: [{
           from: paths.src.public,
           to: paths.build,

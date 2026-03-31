@@ -1,13 +1,12 @@
-const webpack = require('webpack')
+const { rspack } = require('@rspack/core')
 const TerserPlugin = require('terser-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const WebpackShellPluginNext =require('webpack-shell-plugin-next')
 const getPaths = require('./utilities/getPaths')
 const getTerserOptions = require('./utilities/getTerserOptions')
 
-module.exports = (webpackEnv) => {
-  const { BUNDLER_ENV, BUNDLER_WITH_PROFILING } = webpackEnv
+module.exports = (rspackEnv) => {
+  const { BUNDLER_ENV, BUNDLER_WITH_PROFILING } = rspackEnv
 
   const paths = getPaths({ BUNDLER_ENV })
   const terserOptions = getTerserOptions({ BUNDLER_WITH_PROFILING })
@@ -18,18 +17,20 @@ module.exports = (webpackEnv) => {
     optimization: {
       minimize: true,
       minimizer: [
-        new TerserPlugin({ terserOptions }),
-        new CssMinimizerPlugin(),
+        new TerserPlugin({ terserOptions }),  // TODO investigate SwcJsMinimizerRspackPlugin
+        new CssMinimizerPlugin(),  // TODO investigate LightningCssMinimizerRspackPlugin
       ],
     },
     plugins: [
-      new webpack.DefinePlugin({
+      new rspack.DefinePlugin({
         'process.env.EXAMPLE': JSON.stringify('prodconfig'),
       }),
-      new MiniCssExtractPlugin({
+      new rspack.CssExtractRspackPlugin({  // new MiniCssExtractPlugin({
         filename: paths.static.css.filenameCss,
         chunkFilename: paths.static.css.chunkFilenameCss,
       }),
+      // TODO watch list to see if WebpackShellPluginNext gets added:
+      // https://rspack.rs/guide/compatibility/plugin#plugin-compatibility
       new WebpackShellPluginNext({
         onBuildStart: {
           scripts: ['ts-node scripts/generate-sitemap.ts'],

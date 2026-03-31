@@ -1,5 +1,5 @@
-const webpack = require('webpack')
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+const { rspack } = require('@rspack/core')
+const ReactRefreshPlugin = require('@rspack/plugin-react-refresh')
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
 const packageJson = require('../package.json')
 
@@ -25,15 +25,11 @@ module.exports = () => {
       historyApiFallback: true,
     },
     plugins: [
-      new webpack.DefinePlugin({
+      new rspack.DefinePlugin({
         'process.env.EXAMPLE': JSON.stringify('devconfig'),
       }),
-      // NOTE per the docs added "react-refresh/babel" (r-r/b) to
-      // .babelrc and babel-loader, but seems to work without r-r/b...
-      // docs also used to say use webpack.HotModuleRepalcementPlugin,
-      // which also seemed to be unneeded, and now they don't...
-      // so be on the lookout for doc changes related to r-r/b too
-      new ReactRefreshWebpackPlugin(),
+      new ReactRefreshPlugin(),
+      new rspack.HotModuleReplacementPlugin(),
       new CaseSensitivePathsPlugin(),
     ],
   }

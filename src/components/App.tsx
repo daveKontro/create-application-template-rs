@@ -29,7 +29,7 @@ export const App: FC = () => {
         <app.StyledHeader>
           <h1>
             <Typewriter
-              text={'Create Application Template'}
+              text={'Create Application Template RS'}
               speed={50}
             />
           </h1>

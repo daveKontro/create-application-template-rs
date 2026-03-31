@@ -1,11 +1,11 @@
 import { transparentize } from 'polished'
 
 const theme = {
-  font: 'exo2',
+  font: 'orbitron',
   colors: {
     palette: {
-      background: '#454145',
-      primary: '#cec2eb',
+      background: '#081e28',
+      primary: '#fd05a0',
     },
     get link() {
       const link = this.palette.primary

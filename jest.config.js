@@ -32,8 +32,15 @@ module.exports = async () => {
     ],
     testEnvironment: 'jsdom',
     transform: {
-      // https://babeljs.io/docs/config-files#jest
-      '^.+\\.(js|jsx|mjs|cjs|ts|tsx)$': 'babel-jest',
+      '^.+\\.(t|j)sx?$': ['@swc/jest', {
+        jsc: {
+          transform: {
+            react: {
+              runtime: 'automatic',
+            },
+          },
+        },
+      }],
       '^.+\\.css$': '<rootDir>/jest/cssTransform.js',
       '^.+\\.svg$': '<rootDir>/jest/svgTransform.js',
       '^.+\\.woff2$': '<rootDir>/jest/fontTransform.js',
