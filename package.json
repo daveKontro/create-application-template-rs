@@ -1,9 +1,9 @@
 {
   "name": "@epic-effx/create-application-template-rs",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
-    "bin": {
+  "bin": {
     "create-application-template-rs": "bin/create-application-template-rs.js"
   },
   "scripts": {
