@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`styled with palette colors 1`] = `
+.c0 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  min-width: 142px;
+  padding: 10px;
+  font-size: 18px;
+  font-family: 'orbitron';
+  color: #fd05a0;
+  background-color: #081e28;
+  border: 1px solid #fd05a0;
+  border-radius: 12px;
+  transition-duration: 0.5s;
+}
+
+.c0:hover {
+  border-radius: 20px;
+}
+
+.c1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+  width: 42px;
+}
+
+<button
+  class="c0"
+>
+  count: 
+  <div
+    class="c1"
+    data-testid="count"
+  >
+    0
+  </div>
+</button>
+`;
