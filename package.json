@@ -1,6 +1,6 @@
 {
   "name": "@epic-effx/create-application-template-rs",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "provides an Rspack + SWC configured application template for you to build upon",
   "main": "index.js",
   "bin": {
