@@ -6,11 +6,11 @@ exports[`styled with palette colors 1`] = `
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 40px;
   min-width: 142px;
+  height: 40px;
   padding: 10px;
+  font-family: 'orbitron',sans-serif;
   font-size: 18px;
-  font-family: 'orbitron';
   color: #fd05a0;
   background-color: #081e28;
   border: 1px solid #fd05a0;

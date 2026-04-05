@@ -5,11 +5,11 @@ export const StyledCounter = styled.button`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 40px;
   min-width: 142px;
+  height: 40px;
   padding: 10px;
+  font-family: '${({ theme }) => theme.font}', sans-serif;
   font-size: 18px;
-  font-family: '${({ theme }) => theme.font}';
   color: ${({ theme }) => theme.colors.palette.primary};
   background-color: ${({ theme }) => theme.colors.palette.background};
   border: 1px solid ${({ theme }) => theme.colors.palette.primary};
