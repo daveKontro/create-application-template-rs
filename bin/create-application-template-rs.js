@@ -36,13 +36,16 @@ const run = async () => {
     get packageJson() { return path.resolve(this.root, 'package.json') },
     get subDirFiles() {
       const src = path.resolve(this.root, 'src')
+      const public = path.resolve(src, 'public')
       const assets = path.resolve(src, 'assets')
       const styles = path.resolve(src, 'styles')
       const components = path.resolve(src, 'components')
 
       const srcDirs = {
+        public: {
+          faviconIco: path.resolve(public, 'favicon.ico'),
+        },
         assets: {
-          faviconIco: path.resolve(assets, 'favicon.ico'),
           logoSvg: path.resolve(assets, 'logo.svg'),
         },
         components: {

@@ -43,12 +43,6 @@ const getPaths = ({ BUNDLER_ENV }) => {
         get indexTsx() { return path.join(this.src, 'index.tsx') },
         get indexHtml() { return path.join(this.src, 'index.html') },
         get public() { return path.join(this.src, 'public') },
-        get assets() {
-          return {
-            assets: path.join(this.src, 'assets'),
-            get faviconIco() { return path.join(this.assets, 'favicon.ico') },
-          }
-        },
       }
     },
   }
