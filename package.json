@@ -1,6 +1,6 @@
 {
   "name": "@epic-effx/create-application-template-rs",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "provides an Rspack + SWC configured application template for you to build upon",
   "main": "index.js",
   "bin": {
@@ -36,7 +36,7 @@
     "javascript"
   ],
   "url": "https://www.createapplicationtemplaters.com/",
-    "repository": {
+  "repository": {
     "type": "git",
     "url": "https://github.com/daveKontro/create-application-template-rs.git"
   },
