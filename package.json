@@ -36,7 +36,11 @@
     "javascript"
   ],
   "url": "https://www.createapplicationtemplaters.com/",
-  "author": "",
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/daveKontro/create-application-template-rs.git"
+  },
+  "author": "Dave Kontrovitz",
   "license": "MIT",
   "proxy": "http://localhost:3000",
   "engines": {
