@@ -1,4 +1,5 @@
-import { styled, keyframes } from 'styled-components'
+import styled from '@emotion/styled'
+import { keyframes } from '@emotion/react'
 
 const fadeIn = keyframes`
   0% {
@@ -33,7 +34,7 @@ export const StyledSection = styled.section`
 `
 
 export const StyledLink = styled.a`
-  color: ${({ theme }) => theme.colors.link.regular};
+  color: ${({ theme }) => theme.colors.link.main};
   transition: 0.3s;
 
   &:hover {

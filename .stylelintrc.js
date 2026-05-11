@@ -1,6 +1,5 @@
 // NOTE if you wish to use .css (see README.md "styles")
 // - remove customSyntax and use "npm stylelint:css"
-// - remove 'value-keyword-case', particularly 'ignoreKeywords'
 
 module.exports = {
   extends: [
@@ -8,8 +7,7 @@ module.exports = {
     'stylelint-config-recess-order',
     'stylelint-no-unsupported-browser-features',
   ],
-
-  customSyntax: 'postcss-styled-components',
+  customSyntax: 'postcss-styled-syntax',
   ignoreFiles: [],
   rules: {
     'selector-class-pattern': null,
@@ -18,11 +16,8 @@ module.exports = {
     'declaration-empty-line-before': 'never',
     'media-feature-range-notation': 'prefix',
     'value-keyword-case': [
-      'lower',
-      {
-        'ignoreKeywords': [
-          '/^POSTCSS_styled-components_\\d+$/',
-        ],
+      'lower', {
+        ignoreKeywords: [],
       },
     ],
   },

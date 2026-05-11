@@ -16,6 +16,9 @@ module.exports = {
       version: 'detect',
     },
   },
+  plugins: [
+    '@emotion',
+  ],
   extends: [
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
@@ -305,5 +308,11 @@ module.exports = {
     // 'flowtype/define-flow-type': 'error',
     // 'flowtype/require-valid-file-annotation': 'error',
     // 'flowtype/use-flow-type': 'error',
+
+    // 📜 @emotion
+    '@emotion/jsx-import': 'error',
+    '@emotion/no-vanilla': 'error',
+    '@emotion/import-from-emotion': 'error',
+    '@emotion/styled-import': 'error',
   },
 }
