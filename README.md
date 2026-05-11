@@ -76,11 +76,11 @@ npm run stylelint
 ```
 
 ## styles
-styling is done using the style-components module, but straight CSS is supported
+styling is done using the emotion module, but straight CSS is supported
 
-after instillation it is recommended to proceed using styled-components or CSS, but not both
+after instillation it is recommended to proceed using emotion or CSS, but not both
 
-if you proceed with styled-components: 
+if you proceed with emotion: 
   - remove the single `.css` example in `/src/styles/`
   - that's it!
 

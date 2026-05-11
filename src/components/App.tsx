@@ -1,19 +1,19 @@
 import { FC } from 'react'
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from '@emotion/react'
 import GlobalStyles from '../styles/Global'
 import theme from '../styles/theme'
 import * as app from '../styles/App.styled'
 import { StyledLogo } from '../styles/Logo.styled'
 import '../styles/env.css'
 import logo from '../assets/logo.svg'
-import { Counter } from './Counter'
-import { Typewriter } from './Typewriter'
+import Counter from './Counter'
+import Typewriter from './Typewriter'
 
 const TemplateLink: FC = () => {
   return (
     <app.StyledLink
       href='https://www.npmjs.com/package/@epic-effx/create-application-template-rs'
-      rel='noreferrer'
+      rel='noopener noreferrer'
       target='_blank'
     >
       here
@@ -21,7 +21,7 @@ const TemplateLink: FC = () => {
   )
 }
 
-export const App: FC = () => {
+const App: FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
@@ -64,3 +64,5 @@ export const App: FC = () => {
     </ThemeProvider>
   )
 }
+
+export default App

@@ -7,7 +7,7 @@ import {
 } from 'react'
 import { StyledText } from '../styles/Typewriter.styled'
 
-export const Typewriter: FC<
+const Typewriter: FC<
   PropsWithChildren<{
     text:string,
     speed:number,
@@ -64,3 +64,5 @@ export const Typewriter: FC<
     </StyledText>
   )
 }
+
+export default Typewriter

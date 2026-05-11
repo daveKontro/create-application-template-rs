@@ -1,6 +1,9 @@
-import { render, screen, act } from '@testing-library/react'
-import 'jest-styled-components'
-import { Typewriter } from './Typewriter'
+import {
+  render,
+  screen,
+  act,
+} from '@testing-library/react'
+import Typewriter from './Typewriter'
 
 jest.useFakeTimers()
 
