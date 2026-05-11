@@ -10,6 +10,15 @@ expect.extend(matchers)
 require('@testing-library/jest-dom')
 // require('@testing-library/jest-dom/jest-globals')
 
+// emotion matchers and snapshot serializer
+const {
+  matchers: matchersEmotion,
+  createSerializer,
+} = require('@emotion/jest')
+
+expect.extend(matchersEmotion)
+expect.addSnapshotSerializer(createSerializer())
+
 afterEach(() => {
   jest.useRealTimers()
 })

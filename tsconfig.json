@@ -16,11 +16,8 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "types": [
-      "@types/node",
-      "@types/react",
-      "@types/react-dom",
-      "@types/jest",
-      "@types/styled-components",
+      "node",
+      "jest",
       "jest-extended",
       "@testing-library/jest-dom"
     ],

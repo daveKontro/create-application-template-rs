@@ -6,7 +6,7 @@ import * as styledCount from '../styles/Counter.styled'
 
 type Count = number
 
-export const Counter: FC = () => {
+const Counter: FC = () => {
   const [count, setCount] = useState<Count>(0)
 
   const handleClickCounter = () => setCount((count: Count) => ++count)
@@ -24,3 +24,5 @@ export const Counter: FC = () => {
     </div>
   )
 }
+
+export default Counter

@@ -1,6 +1,9 @@
-import { render, screen, act } from '@testing-library/react'
-import 'jest-styled-components'
-import { App } from './App'
+import {
+  render,
+  screen,
+  act,
+} from '@testing-library/react'
+import App from './App'
 
 jest.useFakeTimers()
 

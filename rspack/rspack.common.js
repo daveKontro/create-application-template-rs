@@ -87,6 +87,7 @@ module.exports = (rspackEnv) => {
                   transform: {
                     react: {
                       runtime: 'automatic',
+                      importSource: '@emotion/react',
                       development: isDevelopment,
                       refresh: isDevelopment,
                     },
@@ -94,10 +95,11 @@ module.exports = (rspackEnv) => {
                   externalHelpers: true,
                   experimental: {
                     plugins: [
-                      ['@swc/plugin-styled-components', {
-                        displayName: true,
-                        ssr: true,
-                        fileName: true,
+                      ['@swc/plugin-emotion', {
+                        sourceMap: true,
+                        autoLabel: 'dev-only',
+                        labelFormat: '[local]',
+                        importMap: {},
                       }],
                     ],
                   },

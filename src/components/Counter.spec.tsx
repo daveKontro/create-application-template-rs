@@ -1,9 +1,8 @@
 import { render, screen } from '@testing-library/react'
-import 'jest-styled-components'
 import { userEvent } from '@testing-library/user-event'
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from '@emotion/react'
 import theme from '../styles/theme'
-import { Counter } from './Counter'
+import Counter from './Counter'
 
 test('count increases per click', async () => {
   render(

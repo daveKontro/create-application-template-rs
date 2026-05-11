@@ -1,10 +1,21 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`styled with palette colors 1`] = `
-.c0 {
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
   justify-content: center;
   min-width: 142px;
   height: 40px;
@@ -18,24 +29,35 @@ exports[`styled with palette colors 1`] = `
   transition-duration: 0.5s;
 }
 
-.c0:hover {
+.emotion-0:hover {
   border-radius: 20px;
 }
 
-.c1 {
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: right;
+  -ms-flex-pack: right;
+  -webkit-justify-content: right;
   justify-content: right;
   width: 42px;
 }
 
 <button
-  class="c0"
+  class="emotion-0"
 >
   count: 
   <div
-    class="c1"
+    class="emotion-1"
     data-testid="count"
   >
     0
