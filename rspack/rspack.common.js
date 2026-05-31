@@ -59,13 +59,22 @@ module.exports = (rspackEnv) => {
               parser: {
                 syntax: 'typescript',
               },
-              externalHelpers: true,
               transform: {
                 react: {
                   runtime: 'automatic',
                   development: isDevelopment,
                   refresh: isDevelopment,
                 },
+              },
+              externalHelpers: true,
+              experimental: {
+                plugins: [
+                  ['@swc/plugin-emotion', {
+                    sourceMap: true,
+                    autoLabel: 'dev-only',
+                    labelFormat: '-[filename]-[local]',
+                  }],
+                ],
               },
             },
             env: {
@@ -99,8 +108,7 @@ module.exports = (rspackEnv) => {
                       ['@swc/plugin-emotion', {
                         sourceMap: true,
                         autoLabel: 'dev-only',
-                        labelFormat: '[local]',
-                        importMap: {},
+                        labelFormat: '-[filename]-[local]',
                       }],
                     ],
                   },

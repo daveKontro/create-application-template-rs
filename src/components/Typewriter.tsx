@@ -55,7 +55,7 @@ const Typewriter: FC<
   ])
 
   return (
-    <StyledText>
+    <StyledText $minHeightRem={1}>
       {displayedText}
       {
         (currentIndex === text.length && children) &&
