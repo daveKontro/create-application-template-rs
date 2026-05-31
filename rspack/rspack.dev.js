@@ -20,6 +20,15 @@ module.exports = () => {
         {
           context: ['/'],
           target: packageJson.proxy,
+          // proxy bypass - static file extensions
+          // (.ico, fonts, images, JS, CSS) are now 
+          // served directly by the dev server instead 
+          // of being forwarded to localhost:3000
+          bypass: (req) => {
+            if (/\.(ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot|js|css|map)$/.test(req.path)) {
+              return req.path
+            }
+          },
         },
       ],
       historyApiFallback: true,

@@ -148,6 +148,10 @@ module.exports = (rspackEnv) => {
             },
           ],
         },
+        // reminder: these rules only apply to files 
+        // imported through the module system, they 
+        // don't affect the favicon which is handled 
+        // by CopyRspackPlugin as a static copy
         {
           test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
           type: 'asset/resource',
