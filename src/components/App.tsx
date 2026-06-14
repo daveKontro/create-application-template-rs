@@ -12,11 +12,11 @@ import Typewriter from './Typewriter'
 const TemplateLink: FC = () => {
   return (
     <app.StyledLink
-      href='https://www.npmjs.com/package/@epic-effx/create-application-template-rs'
-      rel='noopener noreferrer'
-      target='_blank'
+      href={'https://www.npmjs.com/package/@epic-effx/create-application-template-rs'}
+      rel={'noopener noreferrer'}
+      target={'_blank'}
     >
-      here
+      <>here</>
     </app.StyledLink>
   )
 }
@@ -51,11 +51,11 @@ const App: FC = () => {
           </h2>
         </app.StyledHeader>
         <app.StyledSection>
-          <code className='card--env'>[NODE_ENV={process.env.NODE_ENV}]</code>
-          <code className='card--env'>[EXAMPLE={process.env.EXAMPLE}]</code>
+          <code className={'card--env'}>[NODE_ENV={process.env.NODE_ENV}]</code>
+          <code className={'card--env'}>[EXAMPLE={process.env.EXAMPLE}]</code>
         </app.StyledSection>
         <app.StyledSection>
-          <StyledLogo src={logo} alt='logo'/>
+          <StyledLogo src={logo} alt={'logo'}/>
         </app.StyledSection>
         <app.StyledSection>
           <Counter />

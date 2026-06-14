@@ -16,7 +16,7 @@ const Counter: FC = () => {
       <styledCount.StyledCounter onClick={handleClickCounter}>
         <>count:&nbsp;</>
         <styledCount.StyledCount
-          data-testid='count'
+          data-testid={'count'}
         >
           {count}
         </styledCount.StyledCount>

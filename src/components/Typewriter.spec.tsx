@@ -15,7 +15,7 @@ test('renders text and children', () => {
       text={text}
       speed={50}
     >
-      <div data-testid='child-element'>child</div>
+      <div data-testid={'child-element'}>child</div>
     </Typewriter>
   )
 

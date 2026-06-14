@@ -9,10 +9,10 @@ import { StyledText } from '../styles/Typewriter.styled'
 
 const Typewriter: FC<
   PropsWithChildren<{
-    text:string,
-    speed:number,
-    delay?:number,
-    children?:ReactElement,
+    text: string,
+    speed: number,
+    delay?: number,
+    children?: ReactElement,
   }>
 > = ({
   text,

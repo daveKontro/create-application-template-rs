@@ -75,6 +75,19 @@ module.exports = {
     '@typescript-eslint/no-useless-constructor': 'error',
     '@typescript-eslint/no-var-requires': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/type-annotation-spacing': [
+      'error',
+      {
+        'before': false,
+        'after': true,
+        'overrides': {
+          'arrow': {
+            'before': true,
+            'after': true,
+          },
+        },
+      },
+    ],
 
     // 📜 eslint
     'array-callback-return': 'error',
@@ -271,6 +284,13 @@ module.exports = {
     'react/jsx-indent': ['error', 2],
     'react/jsx-indent-props': ['error', 2],
     'react/jsx-props-no-multi-spaces': 'error',
+    'react/jsx-curly-brace-presence': [
+      'error',
+      {
+        'props': 'always',
+        'children': 'ignore',
+      },
+    ],
 
     // 📜 jsx-a11y
     'jsx-a11y/click-events-have-key-events': 'off',  // could cause accidental clicks
