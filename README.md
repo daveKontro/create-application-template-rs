@@ -3,6 +3,11 @@
 ![Static Badge](https://img.shields.io/badge/npm->=v10-%23fd05a0?logo=npm&labelColor=%23081e28)
 
 # Create Application Template RS
+
+<div style="margin-top:20px;">
+  <img src="./src/assets/logo.svg" width="180" height="180" alt="logo" />
+</div>
+
 This project aims to provide a configured application template for you to build upon.  
 
 All configuration is fully visible and under your control to augment as you see fit.  
