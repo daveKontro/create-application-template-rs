@@ -1,3 +1,1 @@
-export type {
-  TransientProp,
-} from './types'
+export type * from './types'

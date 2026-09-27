@@ -17,7 +17,7 @@ export const StyledContainer = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  font-size: max(1em, 18px);
+  font-size: max(1rem, 18px);
   color: ${({ theme }) => theme.colors.palette.primary};
   background-color: ${({ theme }) => theme.colors.palette.background};
 `
