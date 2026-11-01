@@ -88,6 +88,7 @@ module.exports = {
         },
       },
     ],
+    '@typescript-eslint/space-infix-ops': 'error',
 
     // 📜 eslint
     'array-callback-return': 'error',
@@ -230,6 +231,11 @@ module.exports = {
     'jsx-quotes': ['error', 'prefer-single'],
     'comma-spacing': ['error', {
       before: false,
+      after: true,
+    }],
+    'space-infix-ops': 'error',
+    'keyword-spacing': ['error', {
+      before: true,
       after: true,
     }],
 

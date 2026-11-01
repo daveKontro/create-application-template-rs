@@ -1,3 +1,4 @@
+npm run typecheck
 npm run lint
 npm run stylelint
 # use below if you wish to use .css (see README.md "styles")
